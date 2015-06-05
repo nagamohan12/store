@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+jQuery( function($) {
+    $('a').tooltip();
+});
 //= require_tree .

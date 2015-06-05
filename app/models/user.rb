@@ -1,6 +1,7 @@
 # User Model
 class User < ActiveRecord::Base
   rolify
+  has_one :item
   # before_action :authenticate_user!
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

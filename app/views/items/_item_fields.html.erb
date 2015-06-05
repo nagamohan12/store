@@ -1,0 +1,19 @@
+<%= simple_form_for @item do |f| %>
+	<div class="row">
+    <div class="col-md-5">
+      <label>*Item Name</label>
+    </div>
+    <div class="col-md-5">
+      <label>*Item Code</label>
+    </div>
+  </div>
+	<div class="duplicatable_nested_form">
+  	<%= f.input :name, label: false %>
+      <% if f.object.new_record? %>
+        <%= link_to 'Remove', '', :remote => true, :class => 'destroy_duplicate_nested_form' %>
+      <% else %>
+      <% end %>
+  </div>
+  <%= link_to 'Add Another Asset', '', :class => 'duplicate_nested_form' %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,28 @@
+<h1>Listing Items</h1>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Item code</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= link_to item.name, '#', data: {toggle: 'collapse', target: '#item_detail'} %></td>
+        <td><%= item.item_code %></td>
+        <td><%= item.user.email %></td>
+        <td><%= link_to '<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>'.html_safe, edit_item_path(item),title: 'Edit', rel: 'tooltip' %></td>
+        <td><%= link_to '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>'.html_safe, item, method: :delete, data: { confirm: 'Are you sure?', toggle: 'tooltip' }, title: 'Destroy', rel: 'tooltip' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<!--       <div id="item_detail" class="collapse in">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth ne</div> -->
+<br>
+
+<%= link_to 'New Item', new_item_path %>

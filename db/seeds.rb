@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+names = %w(A B C D E F G H I J )
+10.times do |i|
+  Item.create(name: names[i], item_code: "item_#{i}", user_id: User.first.id)
+end
